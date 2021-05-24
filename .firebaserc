@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "gvs-fireapp": {
+      "hosting": {
+        "angular10-firebaseapp": [
+          "gvs-fireapp"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "gvs-fireapp"
+  }
+}

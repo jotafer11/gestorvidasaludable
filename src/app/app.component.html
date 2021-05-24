@@ -1,0 +1,94 @@
+    
+
+<div class="container">
+
+
+
+	<router-outlet>
+
+<nav class="navbar navbar-expand-sm bg-light navbar-dark">
+<ul class="navbar-nav">
+
+      <li class="nav-item">
+        <button class="m-1 btn btn-light btn-outline-primary"
+          Button label = "Home"
+          (click) = "Home=true; L1Screen=false; L2Screen=false">
+          Home
+        </button>
+      </li>
+
+      <li class="nav-item">
+        <button class="m-1 btn btn-light btn-outline-primary"
+          Button label = "L1Screen"
+          (click) = "Home=false; L1Screen=true; L2Screen=false">
+          Entrenamiento 1
+        </button>
+      </li>
+
+      <li class="nav-item">
+          <button class="m-1 btn btn-light btn-outline-primary"
+            Button label = "L2Screen"
+            (click) = "Home=false; L1Screen=false; L2Screen=true">
+            Entrenamiento 2
+          </button>
+      </li>
+
+</ul>
+</nav>
+
+
+
+
+<div class="row">
+
+  <div class="col">
+
+        <button type="button" class="btn btn-primary btn-lg showSingle" target="1">TIMER</button>&nbsp;
+        <button type="button" class="btn btn-secondary btn-lg showSingle" target="2">SHORT BREAK</button>&nbsp;
+        <button type="button" class="btn btn-secondary btn-lg showSingle" target="3">LONG BREAK</button>
+
+
+        <div class="d-flex justify-content-center">
+
+                        <div id="div1" class="targetDiv">
+                                    <p id="countdownPTimer" style="font-size:80px;">50</p>
+                                    <input id="startButtonTimer" type="button" value="Start" />
+                                    <input id="stopButtonTimer" type="button" value="Stop" />
+                        </div>
+
+
+
+
+                        <div id="div2" class="targetDiv" style="display: none;">
+                                    <p id="countdownPShort" style="font-size:80px;">10</p>
+                                    <input id="startButtonShort" type="button" value="Start" />
+                                    <input id="stopButtonShort" type="button" value="Stop" />
+
+                        </div>
+
+                        
+                        <div id="div3" class="targetDiv" style="display: none;">
+                                    <p id="countdownPLong" style="font-size:80px;">180</p>
+                                    <input id="startButtonLong" type="button" value="Start" />
+                                    <input id="stopButtonLong" type="button" value="Stop" />
+
+                        </div>
+
+        </div>
+
+
+  </div>
+
+  <div class="col">
+
+    <app-list-gvs *ngIf="Home"></app-list-gvs>
+    <app-l1-gvs *ngIf="L1Screen"></app-l1-gvs>
+    <app-l2-gvs *ngIf="L2Screen"></app-l2-gvs>
+
+
+  </div>
+
+</div>
+
+  </router-outlet>
+</div>
